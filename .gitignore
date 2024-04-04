@@ -1,7 +1,7 @@
-# CakePHP 3
+#ErgonLite
 
 /vendor/*
-/config/app.php
+/app/.env
 
 /tmp/cache/models/*
 !/tmp/cache/models/empty
@@ -17,9 +17,3 @@
 /logs/*
 !/logs/empty
 
-# CakePHP 2
-
-/app/tmp/*
-/app/Config/core.php
-/app/Config/database.php
-/vendors/*
