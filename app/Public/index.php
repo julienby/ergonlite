@@ -45,7 +45,7 @@ if (file_exists($langFile)) {
 // Création du routeur
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     // Définissez vos routes ici
-    $r->addRoute('GET', '/', 'App\Controllers\WelcomeController:signin');   
+    $r->addRoute('GET', '/', 'App\Controllers\WelcomeController:index');   
     // Vous pouvez ajouter des routes pour PUT et DELETE selon vos besoins
 });
 
