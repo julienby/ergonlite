@@ -15,7 +15,6 @@
         "files": [
             "app/Config/Database.php",
             "app/Helpers/autoload_helpers.php"
-            //"main/Ui/bootstrap/autoload_bootstrap.php"
         ]
     }
 
