@@ -29,7 +29,6 @@ abstract class BaseDb {
         return $stmt->execute([':id' => $id]);
     }
 
-
     //Pour les gestion des transactions
 
     public function startTransaction(): void {

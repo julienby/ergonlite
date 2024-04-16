@@ -1,0 +1,47 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Autoriser l'accès direct aux fichiers et dossiers réels dans /public
+RewriteRule ^(css|js|images)/(.*)$ app/Public/$1/$2 [L,QSA]
+RewriteRule ^resonnance/(.*)$ app/Public/resonnance/$1 [L,QSA]
+RewriteRule ^assets/smarty/(.*)$ app/Public/smarty/$1 [L,QSA]
+
+# Rediriger la racine vers main/Public/index.php
+RewriteRule ^$ app/Public/index.php [L]
+
+# Redirige toutes les requêtes qui ne concernent pas des fichiers ou dossiers réels
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Redirige ces requêtes vers le répertoire /public
+RewriteRule ^ app/Public/$1 [L]
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 600 seconds"
+    ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</IfModule>
+
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|jpe?g|png|gif|swf)$">
+        Header set Cache-Control "public"
+    </FilesMatch>
+    <FilesMatch "\.(css)$">
+        Header set Cache-Control "public"
+    </FilesMatch>
+    <FilesMatch "\.(js)$">
+        Header set Cache-Control "private"
+    </FilesMatch>
+    <FilesMatch "\.(x?html?|php)$">
+        Header set Cache-Control "private, must-revalidate"
+    </FilesMatch>
+</IfModule>
