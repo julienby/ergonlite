@@ -7,8 +7,7 @@ ini_set('display_errors', '1');
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-use App\Models\UserModel;
-use App\Controllers\UserController;
+use App\Controllers\WelcomeController;
 
 
 /*
