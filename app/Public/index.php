@@ -16,14 +16,21 @@ use App\Controllers\WelcomeController;
 
 session_start();
 
-// Vérifiez si une nouvelle langue a été sélectionnée via le paramètre GET 'lang'.
+/**
+ * Sets the language for the application based on the 'lang' query parameter.
+ * If the 'lang' parameter is present, it cleans the value for security and stores it in the session.
+ * If the 'lang' parameter is not present and no language is stored in the session, it sets the default language to English.
+ *
+ * @param none
+ * @return void
+ */
 if (isset($_GET['lang'])) {
-    $lang = preg_replace('/[^a-zA-Z]/', '', $_GET['lang']); // Nettoyer la valeur pour la sécurité
-    // Stockez la langue choisie dans une session ou un cookie
+    $lang = preg_replace('/[^a-zA-Z]/', '', $_GET['lang']); // Clean the value for security
+    // Store the chosen language in a session or cookie
     $_SESSION['lang'] = $lang;
 } elseif (!isset($_SESSION['lang'])) {
-    // Définir une langue par défaut si aucune langue n'est sélectionnée ou stockée
-    $_SESSION['lang'] = 'en'; // Assumer l'anglais comme langue par défaut
+    // Set a default language if no language is selected or stored
+    $_SESSION['lang'] = 'en'; // Assume English as the default language
 }
 
 // Déterminer la langue à utiliser
