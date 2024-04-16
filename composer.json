@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "main/",
+            "App\\": "app/",
             "MyLibrary\\": "app/Libraries/MyLibrary/src/"
         },
         "files": [
