@@ -1,5 +1,8 @@
 # Welcome to Phpexpress PHP Framework!!
 
+## Installation 10s
+```curl -s https://raw.githubusercontent.com/julienby/phpexpress/main/setup.sh | bash```
+
 **Phpexpress** is where simplicity meets elegance in the realm of PHP development. Phpek is designed to streamline your web development process, adhering to the KISS (Keep It Simple, Stupid) principle without sacrificing functionality or speed.
 
 ## 🚀 Fast, Lightweight, and Efficient
