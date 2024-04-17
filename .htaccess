@@ -3,10 +3,10 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Autoriser l'accès direct aux fichiers et dossiers réels dans /public
-RewriteRule ^(css|js|images)/(.*)$ phpeek/app/Public/$1/$2 [L,QSA]
+RewriteRule ^(css|js|images)/(.*)$ phpexpress/app/Public/$1/$2 [L,QSA]
 
 # Rediriger la racine vers main/Public/index.php
-RewriteRule ^$ phpeek/app/Public/index.php [L]
+RewriteRule ^$ phpexpress/app/Public/index.php [L]
 
 # Redirige toutes les requêtes qui ne concernent pas des fichiers ou dossiers réels
 
