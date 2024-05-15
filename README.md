@@ -19,6 +19,18 @@ Get started quickly with our comprehensive guides and tutorials. Join our growin
 
 Whether you're building a small project or a large-scale application, **Phprafale** offers the perfect balance of simplicity, speed, and power. It's not just a framework; it's a movement towards more efficient, enjoyable, and accessible web development.
 
+## Stack / Philosophy
+- package manager -> composer
+- .htaccess (if apache) 
+- templating langage ? no -> php 100%
+- database -> sqlite first (but it's up to you use any other database)
+- orm no -> only pdo or native db driver
+
+## Phprafale hate ....
+- abstractions (too much ...)
+- dependancies
+- complexity
+
 ### 🌟 Features:
 - Ultra-lightweight design for maximum performance
 - Adheres to the KISS principle for ease of use and maintenance
